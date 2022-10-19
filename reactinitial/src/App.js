@@ -19,6 +19,7 @@ const App = () => {
 
     function FilterLaptops(evt) {
         setInput(evt.target.value)
+        laptops.filter((laptop) => laptop.brand.includes({ input }))
     }
 
     return (
