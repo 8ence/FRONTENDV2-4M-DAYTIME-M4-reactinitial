@@ -5,15 +5,16 @@ import { LoadingMask } from './components/LoadingMask'
 const App = () => {
     const [laptops, setLaptops] = useState()
     const [input, setInput] = useState('')
+    const [sorted, setSorted] = useState()
 
     useEffect(() => {
         fetch('https://demoapi.com/api/laptop')
             .then((response) => response.json())
             .then((laptop) => setLaptops(laptop))
-    }, [])
+    }, [input])
 
     function SortLaptops() {
-        laptops.sort((a, b) => a.weight > b.weight)
+        setSorted(laptops.sort((a, b) => a.weight - b.weight))
     }
 
     function FilterLaptops(evt) {
