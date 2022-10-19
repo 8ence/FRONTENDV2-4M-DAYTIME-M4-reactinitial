@@ -1,13 +1,14 @@
 import React, { useState } from 'react'
+import './Laptop.css'
 
-export const Laptop = ({ laptop }) => {
+export const Laptop = ({ laptop, key }) => {
     const [show, setShow] = useState(false)
 
     return (
-        <div>
-            <div>{laptop.name}</div>
+        <div className="card-container">
+            <div className="name">{laptop.name}</div>
             {show && (
-                <div>
+                <div className="description">
                     {laptop.brand}, {laptop.weight}kg
                 </div>
             )}
